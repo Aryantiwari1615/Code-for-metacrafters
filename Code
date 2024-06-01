@@ -1,0 +1,46 @@
+// Define an array to hold NFT objects
+let nftCollection = [];
+
+// Function to mint a new NFT and store its metadata
+function mintNFT(name, description, creator, edition, dateCreated) {
+    // Create a new NFT object
+    let nft = {
+        name: name,
+        description: description,
+        creator: creator,
+        edition: edition,
+        dateCreated: dateCreated
+    };
+    // Store the new NFT object in the collection
+    nftCollection.push(nft);
+}
+
+// Function to list all NFTs' metadata
+function listNFTs() {
+    // Loop through each NFT in the collection
+    nftCollection.forEach(function(nft) {
+        // Print metadata for each NFT
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Creator: " + nft.creator);
+        console.log("Edition: " + nft.edition);
+        console.log("Date Created: " + nft.dateCreated);
+        console.log("-----------------------------");
+    });
+}
+
+// Function to get the total number of minted NFTs
+function getTotalSupply() {
+    // Return the length of the NFT collection
+    return nftCollection.length;
+}
+
+// Demonstrate functionality by minting some NFTs and listing them
+mintNFT("NFT 1", "Description of NFT 1", "Gregory house", "1 of 10", "2024-05-31");
+mintNFT("NFT 2", "Description of NFT 2", "shaun murphy", "2 of 10", "2024-06-01");
+mintNFT("NFT 3", "Description of NFT 3", "neil melendez", "3 of 10", "2024-06-02");
+
+// List all minted NFTs
+listNFTs();
+// Print the total number of minted NFTs
+console.log("Total NFTs minted: " + getTotalSupply());
